@@ -10,14 +10,16 @@
 #include"MyServer.h"
 #include"FileHandler.h"
 
-
+// Both client and server have to be in one github repo
+// Provide more logging to client as it is not easy to understand that it is working properly
 
 int main(int argc, char const* argv[])
 {
     
     try
     {
-        MyServer server(8080);
+        MyServer server(8080); // give opportunity to user to choose port and address
+        server.start();
 
         std::string buffer;
 
@@ -33,6 +35,7 @@ int main(int argc, char const* argv[])
 
             while (true) {//Reading cycle
                 buffer = server.Read();
+                // Not the best way to fail read
                 if(buffer == "0"){//Connection closed by the Client
                     break;
                 }

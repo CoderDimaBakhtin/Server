@@ -1,9 +1,9 @@
-
+// Why here are spaces?
 
 #include"FileHandler.h"
 
 
-
+// Not sure this class gives a lot of improvements
 FileHandler::FileHandler(std::string name){
     fout.open(name,std::ios::app);
     if (!fout.is_open()) {

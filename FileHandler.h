@@ -8,9 +8,10 @@ private:
     std::ofstream fout;
 
 public:
-    FileHandler(std::string name);
+    // const std::string&
+    FileHandler(std::string name); // copy
 
-    void WriteLine(std::string line);
+    void WriteLine(std::string line); // std::string should be passed by const reference
 
     ~FileHandler();
 

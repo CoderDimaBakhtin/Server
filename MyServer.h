@@ -7,9 +7,6 @@
 #include<string>
 #include <stdexcept> 
 
-
-
-
 class MyServer{
 private:
     int server_fd, new_socket;
@@ -19,14 +16,12 @@ private:
     socklen_t addrlen = sizeof(address);
     char buffer[1024] = { 0 };
 public:
-
     MyServer(const uint16_t& PORT);
-
-    void Accept();
-
-    std::string Read();
-
     ~MyServer();
 
+    MyServer(const MyServer&) = delete;
+    MyServer& operator=(const MyServer&) = delete;
 
+    void Accept();
+    std::string Read();
 };
